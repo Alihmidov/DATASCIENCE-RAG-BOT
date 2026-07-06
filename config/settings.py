@@ -1,17 +1,17 @@
-from pydantic_settings import BaseSettings, SettingsConfigDict
+from pydantic_settings import BaseSettings
 
 class Settings(BaseSettings):
-    
-    APP_NAME: str = "My Application" 
-    
-    EMBEDDING_MODEL: str = "nomic-embed-text" 
-    LLM_MODEL: str = "llama3" 
-    
-    CHROMA_PATH: str = "./chroma.db" 
-    
-    CHUNK_SIZE: int = 500
-    CHUNK_OVERLAP: int = 100
-    
-    model_config = SettingsConfigDict(env_file=".env")
+    APP_NAME: str 
+    EMBEDDING_MODEL: str 
+    CHROMA_PATH: str 
+    CHUNK_SIZE: int 
+    CHUNK_OVERLAP: int 
+    OLLAMA_BASE_URL: str
+    LLM_MODEL: str
+    PROJECT_NAME: str
+    DEBUG: bool
 
+    class Config:
+        env_file = ".env"
+        
 settings = Settings()
