@@ -1,12 +1,12 @@
 import os 
 import fitz 
-from config.settings import settings 
+from config.settings import settings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.embeddings import OllamaEmbeddings
 from langchain_chroma import Chroma 
 
 def ingest_document(file_name: str):
-    file_path = os.path.join("data","raw", file_name)
+    file_path = os.path.join("data", "raw", file_name)
     
     if not os.path.exists(file_path):
         return f"Error: {file_path} not found!"
@@ -27,3 +27,6 @@ def ingest_document(file_name: str):
     )
     
     return f"Successfully ingested {len(chunks)} chunks from {file_name} into vector store."
+
+if __name__ == "__main__":
+    print(ingest_document("handson_ml.pdf"))
