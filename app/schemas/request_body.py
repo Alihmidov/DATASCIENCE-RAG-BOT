@@ -1,4 +1,6 @@
-from pydantic import BaseModel 
+from pydantic import BaseModel, Field 
 
 class ChatRequest(BaseModel):
-    query: str 
+    query: str = Field(..., examples = ["What is overfitting in machine learning?", 
+                                        "What is CatBoost?", 
+                                        "When should I use Random Forest instead of a single Decision Tree?"])
