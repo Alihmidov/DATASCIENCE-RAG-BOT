@@ -12,6 +12,7 @@ dependencies = [
     "langchain-ollama>=1.1.0",
     "pydantic-settings>=2.14.2",
     "pymupdf>=1.28.0",
+    "pytest>=9.1.1",
     "python-multipart>=0.0.32",
     "requests>=2.34.2",
     "streamlit>=1.59.0",
