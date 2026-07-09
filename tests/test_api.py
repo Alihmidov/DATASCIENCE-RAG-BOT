@@ -4,6 +4,7 @@ import pytest
 
 client = TestClient(app)
 
+@pytest.mark.skip(reason="Ollama server is not available in the CI environment")
 def test_end_point_exists():
     response = client.post("/chat",json={"query": "Hello"})
     assert response.status_code == 200
