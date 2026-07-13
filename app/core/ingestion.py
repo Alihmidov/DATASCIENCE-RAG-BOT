@@ -29,4 +29,4 @@ def ingest_document(file_name: str):
     return f"Successfully ingested {len(chunks)} chunks from {file_name} into vector store."
 
 if __name__ == "__main__":
-    print(ingest_document("handson_ml.pdf"))
+    print(ingest_document("progit.pdf"))
