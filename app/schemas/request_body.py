@@ -1,6 +1,6 @@
 from pydantic import BaseModel, Field 
 
 class ChatRequest(BaseModel):
-    query: str = Field(..., examples = ["What is overfitting in machine learning?", 
-                                        "What is CatBoost?", 
-                                        "When should I use Random Forest instead of a single Decision Tree?"])
+    query: str = Field(..., examples=["What is Git?",
+                                      "How do I save changes to my repository?",
+                                      "How can I create a new branch?"])
