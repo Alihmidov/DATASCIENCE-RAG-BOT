@@ -2,7 +2,7 @@ import os
 import fitz 
 from config.settings import settings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_community.embeddings import OllamaEmbeddings
+from langchain_ollama import OllamaEmbeddings
 from langchain_chroma import Chroma 
 
 def ingest_document(file_name: str):
@@ -22,7 +22,9 @@ def ingest_document(file_name: str):
     
     vectorstore = Chroma.from_texts(
         texts = chunks,
-        embedding = OllamaEmbeddings(model=settings.EMBEDDING_MODEL),
+        embedding = OllamaEmbeddings(
+            model=settings.EMBEDDING_MODEL,
+            base_url=settings.OLLAMA_BASE_URL),
         persist_directory = settings.CHROMA_PATH
     )
     
